@@ -454,7 +454,7 @@ app.post("/sendOrder", async (req, res) => {
         var options = {
     from: 'youremail@gmail.com',
     to: email, // Use email from req.body
-    subject: "Order Confirmation",
+    subject: "Order Confirmation from RoyalBangla",
     html: `
         <h1>Order Confirmation</h1>
         <p>Dear Customer,</p>
@@ -462,7 +462,7 @@ app.post("/sendOrder", async (req, res) => {
         <p><strong>Items Ordered:</strong> ${dishNames}</p>
         <p>We hope you enjoy your meal! If you have any questions or need further assistance, please don't hesitate to contact us.</p>
         <p>Warm regards,</p>
-        <p><strong>Le Kashmir</strong></p>
+        <p><strong>RoyalBangla</strong></p>
         <img src='cid:food' alt='Order Confirmation' width='1000px'>
     `,
     attachments: [
@@ -524,7 +524,7 @@ app.post("/timeDetails", async (req, res) => {
         var options = {
     from: 'youremail@gmail.com',
     to: email, // Use email from req.body
-    subject: "Your order is being prepared",
+    subject: "Your order is being prepared from RoyalBangla",
     html: `
         <h1>Get ready to pick your order</h1>
         <p>Dear Customer,</p>
@@ -625,7 +625,7 @@ app.post("/reserveTable", async (req, res) => {
         var options = {
     from: 'youremail@gmail.com',
     to: email, // Use email from req.body
-    subject: "Table Reservation Confirmation",
+    subject: "Table Reservation Confirmation from RoyalBangla",
     html: `
         <h1>Table Reservation Confirmation</h1>
         <p>Dear ${name},</p>
@@ -747,7 +747,7 @@ app.post('/sendotp', (req, res) => {
     var options = {
     from: 'yourmail@gmail.com',
     to: `${email}`,
-    subject: "Email Verification Code",
+    subject: "Email Verification Code from RoyalBangla",
     html: `
         <p>Dear User,</p>
         <p>We hope this message finds you well. Please use the One-Time Password (OTP) below to verify your email address:</p>

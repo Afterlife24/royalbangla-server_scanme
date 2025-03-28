@@ -390,7 +390,7 @@ let db;
 let client;
 
 
-const uri = "mongodb+srv://afterlife668:Afterlife123@cluster0.xcveet4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://Suraj:alcohal2002@suraj.2fxoc.mongodb.net/?retryWrites=true&w=majority&appName=suraj";
 // Connect to MongoDB
 async function connectToMongo() {
     try {

@@ -675,7 +675,6 @@ app.get("/getReservations", async (req, res) => {
     }
 });
 
-
 // Server-Sent Events route for orders
 app.get('/streamOrders', async (req, res) => {
     try {

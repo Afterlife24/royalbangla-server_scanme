@@ -9,7 +9,7 @@ provider:
   httpApi:
     cors: 
       allowedOrigins:
-        - https://www.royalbangla-royalbangla.afterlife.org.in
+        - https://www.royalbangla-scanme.afterlife.org.in
         - https://www.royalbangla-admin.afterlife.org.in
       allowedMethods:
         - GET

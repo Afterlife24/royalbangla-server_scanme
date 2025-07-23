@@ -93,7 +93,7 @@
 //         <p><strong>Items Ordered:</strong> ${dishNames}</p>
 //         <p>We hope you enjoy your meal! If you have any questions or need further assistance, please don't hesitate to contact us.</p>
 //         <p>Warm regards,</p>
-//         <p><strong>Le Kashmir</strong></p>
+//         <p><strong>RoyalBangla</strong></p>
 //         <img src='cid:food' alt='Order Confirmation' width='1000px'>
 //     `,
 //     attachments: [
@@ -311,7 +311,7 @@
 //         <p>If you did not request this verification, please ignore this email or contact our support team for assistance.</p>
 //         <p>Thank you for choosing our service.</p>
 //         <p>Best regards,</p>
-//         <p><strong>Le Kashmir</strong></p>
+//         <p><strong>RoyalBangla</strong></p>
 //     `
 // };
 
@@ -532,7 +532,7 @@ app.post("/timeDetails", async (req, res) => {
         <p><strong>${expectedTime}</strong> </p>
         <p>We hope you'll enjoy your meal! If you have any questions or need further assistance, please don't hesitate to contact us.</p>
         <p>Warm regards,</p>
-        <p><strong>Le Kashmir</strong></p>
+        <p><strong>RoyalBangla</strong></p>
         <img src='cid:food' alt='Order Confirmation' width='1000px'>
     `,
     attachments: [
@@ -755,7 +755,7 @@ app.post('/sendotp', (req, res) => {
         <p>If you did not request this verification, please ignore this email or contact our support team for assistance.</p>
         <p>Thank you for choosing our service.</p>
         <p>Best regards,</p>
-        <p><strong>Le Kashmir</strong></p>
+        <p><strong>RoyalBangla</strong></p>
     `
 };
 

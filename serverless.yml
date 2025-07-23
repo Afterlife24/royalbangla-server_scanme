@@ -1,4 +1,4 @@
-service: route66-route66
+service: royalbangla-api-lambda
 
 provider:
   name: aws

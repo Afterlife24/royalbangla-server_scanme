@@ -6,6 +6,8 @@ provider:
   region: eu-west-3
   environment:
     MONGO_URI: ${env:MONGO_URI}
+    EMAIL_USER: scanme684@gmail.com
+    EMAIL_PASS: hplrnotiheyrofzb
   httpApi:
     cors: 
       allowedOrigins:

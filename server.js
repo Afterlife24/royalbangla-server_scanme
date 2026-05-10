@@ -727,8 +727,8 @@ var transporter = nm.createTransport({
     port: 587,
     secure: false,
     auth: {
-        user: 'scanme684@gmail.com',
-        pass: 'hpirnotiheyrofzb'
+        user: process.env.EMAIL_USER || 'scanme684@gmail.com',
+        pass: process.env.EMAIL_PASS || 'hpirnotiheyrofzb'
     }
 });
 

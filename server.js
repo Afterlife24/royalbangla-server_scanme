@@ -395,17 +395,18 @@ const uri = "mongodb+srv://Suraj:alcohal2002@suraj.2fxoc.mongodb.net/?retryWrite
 async function connectToMongo() {
     try {
         client = new MongoClient(uri, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
             serverSelectionTimeoutMS: 5000, // Timeout after 5 seconds
         });
         await client.connect();
-        db = client.db('Royal_bangla'); // Replace 'Dhanush6371' with your database name
+        db = client.db('Royal_bangla');
         console.log('Connected to MongoDB');
-        startServer(); // Start the server only after MongoDB connection is successful
+        // Only start server if not in Lambda environment
+        if (!process.env.LAMBDA_TASK_ROOT) {
+            startServer();
+        }
     } catch (err) {
         console.error('Error connecting to MongoDB:', err);
-        setTimeout(connectToMongo, 3000); // Retry connection after 5 seconds
+        setTimeout(connectToMongo, 3000); // Retry connection after 3 seconds
     }
 }
 
@@ -732,7 +733,7 @@ var transporter = nm.createTransport({
     }
 });
 
-app.post('/sendotp', (req, res) => {
+app.post('/sendotp', async (req, res) => {
     console.log("Check point 1 - Received request");
     console.log("Request body:", req.body);
     let email = req.body.email;
@@ -755,7 +756,7 @@ app.post('/sendotp', (req, res) => {
     }, 60000);
 
     var options = {
-        from: 'dhanushvardhan6371@gmail.com',
+        from: process.env.EMAIL_USER || 'scanme684@gmail.com',
         to: `${email}`,
         subject: "Email Verification Code from RoyalBangla",
         html: `
@@ -769,21 +770,18 @@ app.post('/sendotp', (req, res) => {
     `
     };
 
-
     console.log("Check point 3 - Sending email to:", email);
-    transporter.sendMail(options, function (error, info) {
-        if (error) {
-            console.log("Email error:", error);
-            // Don't fail - OTP is already saved
-            console.log("OTP for testing:", otp);
-        } else {
-            console.log("Email sent successfully");
-        }
-    });
 
-    // Always return success
-    console.log("Check point 4 - Returning success, OTP:", otp);
-    res.send("Sent OTP");
+    try {
+        await transporter.sendMail(options);
+        console.log("Check point 4 - Email sent successfully");
+        res.send("Sent OTP");
+    } catch (error) {
+        console.log("Email error:", error);
+        console.log("OTP for testing:", otp);
+        // Still return success so user can proceed
+        res.send("Sent OTP");
+    }
 });
 
 app.post('/verify', (req, res) => {

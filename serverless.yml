@@ -7,7 +7,7 @@ provider:
   environment:
     MONGO_URI: ${env:MONGO_URI}
     EMAIL_USER: scanme684@gmail.com
-    EMAIL_PASS: hplrnotiheyrofzb
+    EMAIL_PASS: hpirnotiheyrofzb
   httpApi:
     cors: 
       allowedOrigins:
